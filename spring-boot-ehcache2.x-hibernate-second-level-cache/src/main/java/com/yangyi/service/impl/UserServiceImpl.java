@@ -6,6 +6,8 @@ import com.yangyi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by yangjinfeng on 2016/12/30.
  */
@@ -18,5 +20,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User get(Long userId) {
         return userRepo.findOne(userId);
+    }
+
+    @Override
+    public List<User> users() {
+        return userRepo.findAll();
     }
 }

@@ -5,6 +5,8 @@ import com.yangyi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by yangjinfeng on 2017/1/1.
  */
@@ -18,5 +20,11 @@ public class UserController {
     @ResponseBody
     public User user(@PathVariable Long userId) {
         return userService.get(userId);
+    }
+
+    @RequestMapping("/users")
+    @ResponseBody
+    public List<User> users() {
+        return userService.users();
     }
 }
